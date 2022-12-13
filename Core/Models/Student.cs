@@ -15,7 +15,7 @@ namespace Core.Models
         public string? ProfileImageUrl { get; set; }
 
         //Related
-        public Guid GenderId { get; set; }
+        public int GenderId { get; set; }
         public Gender Gender { get; set; }
         public Address Address { get; set; }
     }

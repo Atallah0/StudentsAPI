@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221129173402_InitialCreate")]
+    [Migration("20221213194223_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -22,9 +22,9 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Models.Address", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("PhysicalAddress")
                         .HasColumnType("TEXT");
@@ -32,8 +32,8 @@ namespace Infrastructure.Data.Migrations
                     b.Property<string>("PostalAddress")
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("StudentId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("StudentId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
 
@@ -45,9 +45,9 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Models.Gender", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -60,9 +60,9 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Models.Student", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("DateOfBirth")
                         .HasColumnType("TEXT");
@@ -75,8 +75,8 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<Guid>("GenderId")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("GenderId")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("LastName")
                         .IsRequired()

@@ -7,6 +7,6 @@ namespace Core.Models
 {
     public class BaseModel
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
     }
 }

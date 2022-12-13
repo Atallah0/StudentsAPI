@@ -29,5 +29,17 @@ namespace API.Controllers
             var students = await _repo.GetStudentsAsync();
             return Ok(_mapper.Map<List<StudentDto>>(students));
         }
+
+        [HttpGet]
+        [Route("[controller]/{id}")]
+        public async Task<IActionResult> GetStudentByIdAsync(int id)
+        {
+            var student = await _repo.GetStudentAsync(id);
+            if(student == null)
+            {
+                return NotFound();
+            }
+            return Ok(_mapper.Map<StudentDto>(student));
+        }
     }
 }

@@ -16,6 +16,14 @@ namespace Infrastructure.Data
             _context = context;
         }
 
+        public async Task<Student> GetStudentAsync(int id)
+        {
+            return await _context.Students
+            .Include(nameof(Gender))
+            .Include(nameof(Address))
+            .FirstOrDefaultAsync(x => x.Id == id);
+        }
+
         public async Task<List<Student>> GetStudentsAsync()
         {
             return await _context.Students

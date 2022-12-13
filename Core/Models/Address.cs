@@ -6,7 +6,7 @@ namespace Core.Models
         public string? PostalAddress { get; set; }
 
         //Related
-        public Guid StudentId { get; set; }
+        public int StudentId { get; set; }
 
     }
 }

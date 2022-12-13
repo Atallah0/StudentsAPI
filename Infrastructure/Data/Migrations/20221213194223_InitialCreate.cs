@@ -15,7 +15,8 @@ namespace Infrastructure.Data.Migrations
                 name: "Genders",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Description = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -27,14 +28,15 @@ namespace Infrastructure.Data.Migrations
                 name: "Students",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     FirstName = table.Column<string>(type: "TEXT", nullable: false),
                     LastName = table.Column<string>(type: "TEXT", nullable: false),
                     DateOfBirth = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
                     Mobile = table.Column<long>(type: "INTEGER", nullable: false),
                     ProfileImageUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    GenderId = table.Column<Guid>(type: "TEXT", nullable: false)
+                    GenderId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -51,10 +53,11 @@ namespace Infrastructure.Data.Migrations
                 name: "Addresses",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     PhysicalAddress = table.Column<string>(type: "TEXT", nullable: true),
                     PostalAddress = table.Column<string>(type: "TEXT", nullable: true),
-                    StudentId = table.Column<Guid>(type: "TEXT", nullable: false)
+                    StudentId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
